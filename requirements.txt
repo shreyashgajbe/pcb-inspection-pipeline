@@ -1,8 +1,9 @@
 ipykernel
-langchain_community
-sentence_transformers
-langchain_huggingface
+langchain-community
+sentence-transformers
+langchain-huggingface
 faiss-cpu
 langchain-ollama
 streamlit
 pypdf
+langchain-core
