@@ -31,9 +31,9 @@ Confidence: [Low/Medium/High]
 Do not guess. If uncertain, state that manual inspection is recommended.
 """
 
-    # Call the cloud multi-modal vision model
+   # Call the cloud multi-modal vision model
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-3.5-flash',  # <-- Change this from gemini-2.5-flash
         contents=[raw_image, prompt]
     )
     
