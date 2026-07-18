@@ -1,7 +1,13 @@
+# Virtual Environment
 myenv/
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
 .env
+
+# Local Databases (Vector RAG cache)
 esp32_db/
-.gitignore1
+chroma.sqlite3
+
+# Local Output Folders & Test Runs
+reports/

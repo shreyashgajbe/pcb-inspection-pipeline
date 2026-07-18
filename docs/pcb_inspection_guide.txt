@@ -1,0 +1,19 @@
+[DEFECT: Missing Component]
+Cause: High acceleration of the pick-and-place machine, or poor adhesive application.
+Repair: Manually place the missing component using a soldering iron or rework station.
+Precaution: Calibrate nozzle pressure and check tape feed alignment regularly.
+
+[DEFECT: Solder Bridge]
+Cause: Excessive solder paste deposition, or misaligned component placement.
+Repair: Use a solder wick (desoldering braid) with a touch of flux to remove excess solder.
+Precaution: Optimize stencil thickness and ensure proper PCB-to-stencil alignment.
+
+[DEFECT: Misalignment]
+Cause: Component shifts during reflow due to improper thermal profiling or mechanical vibrations on the conveyor.
+Repair: Re-flow the component pad with a heat gun, center the chip precisely using tweezers, and let it cool.
+Precaution: Check conveyor belt stability and adjust pre-heat zone ramp rates.
+
+[DEFECT: Short Circuit]
+Cause: Solder bridging or stray conductive copper whiskers between two isolated paths.
+Repair: Use a desoldering braid to clear out excess connection paths and scrape away unwanted deposits.
+Precaution: Implement stricter optical validation checks post-etching.  
