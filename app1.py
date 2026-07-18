@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
-import ollama
+from google import genai
 
 # --- CONFIGURATIONS & PATHS ---
 IMAGE_DIR = "images"
