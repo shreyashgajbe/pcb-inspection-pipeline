@@ -10,9 +10,11 @@ KNOWLEDGE_BASE_FILE = os.path.join(DOCS_DIR, "pcb_inspection_guide.txt")
 
 
 def inspect_pcb(image_path):
-    # Convert relative path to a full Windows absolute path string for Ollama
-    absolute_path = os.path.abspath(image_path)
-    print(f"🔍 Analyzing absolute path: {absolute_path} using LLaVA...")
+    # Initialize the Gemini client
+    client = genai.Client()
+    
+    # Open the image using PIL
+    raw_image = Image.open(image_path)
     
     prompt = """
 You are an IPC Certified PCB Quality Inspector.
@@ -29,15 +31,13 @@ Confidence: [Low/Medium/High]
 Do not guess. If uncertain, state that manual inspection is recommended.
 """
 
-    # Pass the absolute string path directly into the images framework array
-    response = ollama.generate(
-        model='llava',
-        prompt=prompt,
-        images=[absolute_path]
+    # Call the cloud multi-modal vision model
+    response = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=[raw_image, prompt]
     )
     
-    return response['response']
-
+    return response.text
 
 def query_knowledge_base(defect_name):
     if not os.path.exists(KNOWLEDGE_BASE_FILE):
